@@ -17,7 +17,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import { ColorModeContextProvider } from "contexts";
 import { Title, Sider, Layout, Header } from "components/layout";
 import { Login } from "pages/login";
-import { CredentialResponse } from "interfaces/google";
+import { CredentialResponse } from "./interfaces/google";
 import { parseJwt } from "utils/parse-jwt";
 
 const axiosInstance = axios.create();
@@ -30,6 +30,7 @@ axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
       Authorization: `Bearer ${token}`,
     };
   }
+  request.headers["Referrer-Policy"] = "no-referrer-when-downgrade"
 
   return request;
 });
