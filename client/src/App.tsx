@@ -88,7 +88,6 @@ function App() {
 
   return (
     <>
-      <GitHubBanner />
       <ColorModeContextProvider>
         <CssBaseline />
         <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
